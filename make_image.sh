@@ -148,10 +148,11 @@ sudo -u nobody git clone https://github.com/robsonde/digital-ocean-synchronize-A
 cd digital-ocean-synchronize-AUR
 sudo -u nobody makepkg
 pacman --noconfirm -U *.pkg.tar.xz
-systemctl enable sshd
-systemctl enable haveged
-systemctl enable systemd-networkd
-systemctl enable disk_resize
+systemctl enable systemd-timesyncd.service
+systemctl enable sshd.service
+systemctl enable haveged.service
+systemctl enable systemd-networkd.service
+systemctl enable disk_resize.service
 EOF
 
 
