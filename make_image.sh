@@ -96,8 +96,8 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 echo 'nameserver 8.8.8.8' > /mnt/etc/resolv.conf
 
 
-# Enable all the mirrors.
-sed -i 's/#Server = /Server = /' /mnt/etc/pacman.d/mirrorlist
+# Enable all the kernel mirrors.
+sed -i '/^#.*kernel/s/^#//' /mnt/etc/pacman.d/mirrorlist
 
 
 # Set blank machine-id so that a new machine-id is created on first boot.
