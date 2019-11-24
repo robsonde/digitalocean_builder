@@ -7,7 +7,10 @@
 # 
 
 # Add any extra packages here as a space separated list
-Packages="base-devel haveged "
+Core_Packages="base linux linux-firmware gettext inetutils jfsutils logrotate netctl s-nail sysfsutils "
+Required_Packages="texinfo usbutils util-linux xfsprogs openssh grub wget gptfdisk git parted "
+Optional_Packages="base-devel haveged nano vi "
+
 
 # Check we have the right tools installed.
 which sgdisk > /dev/null 2>&1 
@@ -81,7 +84,7 @@ fi
 
 
 # pacstrap install things, this is the place to add packages
-pacstrap -c -M /mnt base openssh grub wget gptfdisk git parted $Packages
+pacstrap -c -M /mnt $Core_Packages $Required_Packages $Optional_Packages
 if [ $? -ne 0 ]; then
 	echo "Something went wrong during install of image!"
 	exit 1
