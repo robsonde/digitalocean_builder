@@ -92,7 +92,9 @@ fi
 
 
 # We need an fstab
-genfstab -U -p /mnt >> /mnt/etc/fstab
+UUID=`blkid -s UUID -o value "${LoopDev}p3"`
+echo "# RootFileSystem" >> /mnt/etc/fstab
+echo "UUID=${UUID}	/	ext4	rw,relatime	0 1" >> /mnt/etc/fstab
 
 
 # We need a name servers, if you want different DNS, this is the place to change it.
