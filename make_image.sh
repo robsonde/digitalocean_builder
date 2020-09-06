@@ -152,7 +152,7 @@ cd /tmp
 sudo -u nobody git clone https://github.com/robsonde/digital-ocean-synchronize-AUR
 cd digital-ocean-synchronize-AUR
 sudo -u nobody makepkg
-pacman --noconfirm -U *.pkg.tar.xz
+pacman --noconfirm -U *.pkg.tar.zst
 systemctl enable systemd-timesyncd.service
 systemctl enable sshd.service
 systemctl enable haveged.service
