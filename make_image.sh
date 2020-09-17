@@ -9,10 +9,17 @@
 # Add any extra packages here as a space separated list
 Core_Packages="base linux linux-firmware gettext inetutils jfsutils logrotate netctl s-nail sysfsutils "
 Required_Packages="texinfo usbutils util-linux xfsprogs openssh grub wget gptfdisk git parted "
-Optional_Packages="base-devel haveged nano vi "
-
+Optional_Packages="base-devel haveged nano vi python "
 
 # Check we have the right tools installed.
+
+which which > /dev/null 2>&1 
+if [ $? -ne 0 ]; then
+	echo "Can't find witch command"
+	echo "Try adding package base-devel"
+	exit 1
+fi
+
 which sgdisk > /dev/null 2>&1 
 if [ $? -ne 0 ]; then
 	echo "Can't find sgdisk"
