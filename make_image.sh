@@ -105,7 +105,7 @@ echo "UUID=${UUID}	/	ext4	rw,relatime	0 1" >> /mnt/etc/fstab
 
 
 # We need a name servers, if you want different DNS, this is the place to change it.
-echo 'nameserver 8.8.8.8' > /mnt/etc/resolv.conf
+echo 'nameserver 9.9.9.9' > /mnt/etc/resolv.conf
 
 
 # Enable all the kernel mirrors.
